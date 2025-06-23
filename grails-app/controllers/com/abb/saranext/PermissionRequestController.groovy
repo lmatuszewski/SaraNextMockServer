@@ -13,6 +13,7 @@ class PermissionRequestController {
         PermissionRequest r = PermissionRequest.findByProcessed(false)
         if (!r) {
             render(new Object() as JSON)
+            return
         }
         r.processed = true
         r.save(flush:true)
